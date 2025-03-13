@@ -137,7 +137,7 @@ body > header{
 }
 
 .about{
-    padding-top: 75px;
+    padding-top: 100px;
 }
 
 /* Step #14 The logo should appear but not be animated if prefers-reduced-motion is selected in the accessibility preferences.  */
