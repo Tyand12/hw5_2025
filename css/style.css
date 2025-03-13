@@ -14,7 +14,7 @@
 
 body{
     font-family: "Poppins", serif;
-    background-image: url("../concrete_seamless.png");
+    background-image: url("../images/concrete_seamless.png");
     background-color: #f1f1f1;
 }
 
@@ -130,10 +130,88 @@ solid 2px border using #45ADAD,
 /* Step #13 Modify the first header (the one not inside main) so that it remains visible at the top of the screen even as we scroll down. Make sure that it is always visible. You can see an example of this in the video and in the screenshot at 1200px when scrolled. This is a challenge problem. You should not give or receive help when completing it. */
 
 
-header:first-of-type{
+body > header{
     position: fixed;
     width: 100%;
     z-index: 1000;
 }
 
+.about{
+    padding-top: 75px;
+}
+
+/* Step #14 The logo should appear but not be animated if prefers-reduced-motion is selected in the accessibility preferences.  */
+
+@media (prefers-reduced-motion: reduce){
+    #logo{
+        animation: none;
+    }
+}
+
+@media print{
+    @page {
+        size: portrait;
+    }
+
+    /* Step #15 Change the font on your body to Arial with a backup value of  Helvetica */
+
+    body{
+        font-family: Arial, Helvetica;
+    }
+
+    /* Step #16 The background image should be removed.  */
+
+    body{
+        background-image: none;
+    }
+
+   /* Step # 17 Edit the nav/nav_links elements so that they are spaced according to the image above. */
+
+   .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center
+   }
+
+   .nav_links{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        gap: 150px;
+   }
+
+    /* Step #18 Edit the pricing class so that the elements align along the bottom.  As long as it aligns along the bottom we don't care if the cards aren't the same height. */
+   .pricing{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        justify-content: space-around;
+   }
+
+    /* Step #19 The card elements should have a solid border 2px of #45ADDD and use flex-basis of 325px.  */
+    .card{
+        border: 2px solid #45ADDD;
+        flex-basis: 325px; 
+    }
+
+    /* Step #20 No part of the gallery should be visible. */
+
+    .gallery{
+        display: none;
+    }
+
+    #gallery{
+        display: none;
+    }
+
+
+
+    /* Step #21 Without using list-style-type add the thumbs up entity as shown in the cards. This is a challenge problem. You should not give or receive help when completing it.**For some people the thumbs up is not printing as yellow. That is fine. */
+
+    .pricing .card ul li:nth-child(2)::after{
+        content: "\1F44D";  
+        font-size: 24px;
+    }
+}
 
